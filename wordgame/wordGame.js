@@ -1,4 +1,4 @@
-/*
+/**
 function tellStory(){
 
 	var name = document.getElementById("name").value;
@@ -12,7 +12,3 @@ function tellStory(){
 	printName.innerHTML = story;
 }
 */
-<<<<<<< HEAD
-=======
-
->>>>>>> 8bedfc42ff08bb7d1a6fc68e3f7d197cab363853
