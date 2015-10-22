@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Guess Number</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="guess.js"></script>
+	
+</head>
+
+<body onload = "init()">
+
+<h1>Guessing Game!</h1>
+	<form>
+		<fieldset>
+			<div id="printLabel">Guess a number between 1 and 100. <br></div>
+			<br>
+			<label for = "">Your Guess</label>
+			<input type = "text" id="guess">
+			<br><br>
+			<button type="button" onclick="check()">Check</button> 
+			<br>
+			<button type="button" id="redo" onclick="init()">Try Again</button> 
+			<br>
+
+		</fieldset>
+	</form>
+
+
+	
+</body>
+
+</html>
+

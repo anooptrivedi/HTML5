@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ball Drop</title>
+	<script type="text/javascript" src="gameAPI.js"></script>
+	
+	<script type="text/javascript">
+		var scene, soccerBall, soccerBall2, printScore, score=0;
+		
+		function init(){
+			scene = new Scene();
+			scene.setBG("green");
+			scene.setSize(1000,500);
+			scene.hideCursor();
+			printScore = document.getElementById("output");
+			
+			soccerBall = new Sprite(scene, "soccerBall.png", 50, 50);
+			soccerBall.setMoveAngle(45);
+			soccerBall.setBoundAction(BOUNCE);
+			soccerBall.setSpeed(45);
+			
+			soccerBall2 = new Sprite(scene, "soccerBall.png", 50, 50);
+			soccerBall2.setPosition(500, 200);			
+			soccerBall2.setSpeed(0);
+		
+			soccerBall2.followMouse = function(){
+				this.setX(document.mouseX);
+				this.setY(document.mouseY);
+			}
+
+			scene.start();
+		}
+		
+		function update(){
+			scene.clear();
+			soccerBall2.followMouse();
+			isCollide();
+			soccerBall.update();
+			soccerBall2.update();
+		}
+		
+		function isCollide() {
+			
+			dist = soccerBall2.distanceTo(soccerBall);
+			if(dist < 50){
+				score++;
+				printScore.innerHTML = "<h4>" + "Score:" + score + "</h4>";			
+			}
+		}
+		
+	</script>
+
+</head>
+
+<body onload="init()">
+	<div id="output"></div>
+</body>
+
+</html>
+

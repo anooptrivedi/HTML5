@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ball Drop</title>
+	<script type="text/javascript" src="gameAPI.js"></script>
+	
+	<script type="text/javascript">
+		var scene, soccerBall;
+		
+		function init(){
+			scene = new Scene();
+			soccerBall = new Sprite(scene, "soccerBall.png", 50, 50);
+			soccerBall.setMoveAngle(180);
+			soccerBall.setSpeed(5);
+			scene.start();
+		}
+		
+		function update(){
+			scene.clear();
+			soccerBall.update();
+		}
+	</script>
+</head>
+
+<body onload="init()"></body>
+
+</html>
+

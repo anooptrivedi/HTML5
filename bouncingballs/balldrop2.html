@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ball Drop</title>
+	<script type="text/javascript" src="gameAPI.js"></script>
+	
+	<script type="text/javascript">
+		var scene, soccerBall, soccerBall2, sound;
+		
+		function init(){
+			scene = new Scene();
+			soccerBall = new Sprite(scene, "soccerBall.png", 50, 50);
+			soccerBall.setMoveAngle(45);
+			soccerBall.setBoundAction(BOUNCE);
+			sound = new Sound("ballbouncingsound.mp3");
+
+			soccerBall.setSpeed(30);
+			scene.start();
+		}
+		
+		function update(){
+			scene.clear();
+			sound.play();			
+			soccerBall.update();
+		}
+	</script>
+</head>
+
+<body onload="init()"></body>
+
+</html>
+
