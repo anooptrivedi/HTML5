@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Alien Space Ship!</title>
+	<script type="text/javascript" src="gameAPI.js"></script>
+	<script type="text/javascript" src="car.js"></script>
+	
+	<script type="text/javascript">
+		var car, scene, city;
+				
+		function init(){
+			scene = new Scene();			
+			car = new Car();	
+					
+
+			city = new Sprite(scene,"city.png", 800, 600);
+			city.setPosition(400,300);
+			city.setSpeed(0);
+
+			scene.start();
+		}
+		
+		function update(){
+			scene.clear();
+			city.update();
+			
+			car.check_Keys();
+			car.check_Gravity();
+			car.update();
+		}
+
+	</script>
+
+</head>
+
+<body onload="init()">
+</body>
+</html>
+
